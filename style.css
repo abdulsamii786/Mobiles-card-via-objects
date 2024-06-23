@@ -1,0 +1,95 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap");
+
+@font-face {
+  font-family: Oswald;
+  src: url("https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap");
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Oswald;
+}
+body {
+  background-color: rgba(176, 196, 222, 0.171);
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+.main-heading h1 {
+  text-align: center;
+  margin: 10px;
+  letter-spacing: 3px;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.img-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+.img-wrapper img {
+  margin-bottom: 10px;
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+}
+
+.box-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: 1px solid #ececf8;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 8px;
+  width: 300px;
+  background-color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.box-wrapper:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+.details {
+  display: flex;
+  align-items: center;
+  margin: 3px 0px;
+  font-family: "Arial", Arial, sans-serif !important;
+  border-bottom: 1px solid #ececf8;
+}
+.details p {
+  line-height: 20px;
+}
+
+.heading {
+  min-width: 70px;
+  font-weight: 600;
+}
+.btn {
+  margin-top: 10px;
+  width: 100%;
+}
+.btn a {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: lightblue;
+  text-align: center;
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: 18px;
+}
+h6 {
+  font-size: 16px;
+}
