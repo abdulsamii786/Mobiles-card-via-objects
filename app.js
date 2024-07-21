@@ -202,15 +202,46 @@ let mobilesDetails = [
     location: "https://www.gsmarena.com/oneplus_nord_3-12135.php",
   },
 ];
-for (let i = 0; i < mobilesDetails.length; i++) {
-  divContainer.innerHTML += `<div class="box-wrapper">
-  <div class="img-wrapper"><img src="${mobilesDetails[i].img}"><h2>${mobilesDetails[i].model}</h2></div>
-<div><div class="details"><span class="heading">Brand:</span>${mobilesDetails[i].brand} </div>
-  <div class="details"><span class="heading">Specs:</span>${mobilesDetails[i].spec} </div>
-  <div class="details"><span class="heading">OS:</span>${mobilesDetails[i].os} </div>
-  <div class="details"><span class="heading">Color:</span>${mobilesDetails[i].color} </div>
-  <div class="details"><span class="heading">Price:</span>${mobilesDetails[i].price} </div></div>
-  <div class="btn"><a href="${mobilesDetails[i].location}" target="_blank">Details</a></div>
-  </div>
-  `;
-}
+
+const displayMobiles = () => {
+  for (let i = 0; i < mobilesDetails.length; i++) {
+    divContainer.innerHTML += `<div class="box-wrapper">
+    <div class="img-wrapper"><img src="${mobilesDetails[i].img}"><h2>${mobilesDetails[i].model}</h2></div>
+  <div><div class="details"><span class="heading">Brand:</span>${mobilesDetails[i].brand} </div>
+    <div class="details"><span class="heading">Specs:</span>${mobilesDetails[i].spec} </div>
+    <div class="details"><span class="heading">OS:</span>${mobilesDetails[i].os} </div>
+    <div class="details"><span class="heading">Color:</span>${mobilesDetails[i].color} </div>
+    <div class="details"><span class="heading">Price:</span>${mobilesDetails[i].price} </div></div>
+    <div class="btn"><a href="${mobilesDetails[i].location}" target="_blank">Details</a></div>
+    </div>
+    `;
+  }
+};
+displayMobiles();
+
+let search = document.getElementById("search");
+
+const searchBar = () => {
+  divContainer.innerHTML = "";
+  if (search.value.trim() === "") {
+    displayMobiles();
+    return;
+  }
+  let filteredData = mobilesDetails.filter(
+    (mobiles) =>
+      mobiles.brand.toLowerCase().includes(search.value.toLowerCase()) ||
+      mobiles.model.toLowerCase().includes(search.value.toLowerCase())
+  );
+  filteredData.forEach((item) => {
+    divContainer.innerHTML += `<div class="box-wrapper">
+    <div class="img-wrapper"><img src="${item.img}"><h2>${item.model}</h2></div>
+  <div><div class="details"><span class="heading">Brand:</span>${item.brand} </div>
+    <div class="details"><span class="heading">Specs:</span>${item.spec} </div>
+    <div class="details"><span class="heading">OS:</span>${item.os} </div>
+    <div class="details"><span class="heading">Color:</span>${item.color} </div>
+    <div class="details"><span class="heading">Price:</span>${item.price} </div></div>
+    <div class="btn"><a href="${item.location}" target="_blank">Details</a></div>
+    </div>
+    `;
+  });
+};
